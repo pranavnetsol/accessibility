@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Accessibility Assessment</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="pagetwo.html">Table</a></li>
+				<li><a href="accordion.html">Accordion</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main>
+		<h1>Sign Up</h1>
+		<form>
+			<label for="firstname">First Name </label>
+			<input type="text" id="firstname" name="firstname" required aria-required="true">
+			
+			<label for="lastname">Last Name </label>
+			<input type="text" id="lastname" name="lastname" required aria-required="true">
+			
+			<label for="email">Email </label>
+			<input type="email" id="email" name="email" required aria-required="true">
+			
+			<label for="birthyear">Birth Year</label>
+			<select id="birthyear" name="birthyear">
+				<option value="year">year</option>
+				<option value="2000">1999</option>
+				<option value="2001">2000</option>
+				<option value="2002">2001</option>
+				<option value="2002">2002</option>
+				<option value="2002">2003</option>
+				<option value="2002">2004</option>
+				<option value="2002">2005</option>
+			
+			</select>
+			
+			<label>Gender </label>
+			<div>
+				<input type="radio" id="male" name="gender" value="male" required aria-required="true">
+				<label for="male">Male</label>
+			</div>
+			<div>
+				<input type="radio" id="female" name="gender" value="female" required aria-required="true">
+				<label for="female">Female</label>
+			</div>
+		
+			
+			<label>Interests </label>
+			<div>
+				<input type="checkbox" id="music" name="interests" value="music" required aria-required="true">
+				<label for="music">Music</label>
+			</div>
+			<div>
+				<input type="checkbox" id="sports" name="interests" value="sports" required aria-required="true">
+				<label for="sports">Sports</label>
+			</div>
+			
+			
+			<button type="reset">Reset</button>
+			<button type="submit" disabled>Submit</button>
+		</form>
+	</main>
+	
+	<footer>
+		<nav id="foot">
+			<ul>
+				<li><a href="#">Privacy Policy</a></li>
+				<li><a href="#">Terms of Service</a></li>
+				<li><a href="#">Contact Us</a></li>
+			</ul>
+		</nav>
+	</footer>
+	
+	<script>
+		
+		const form = document.querySelector('form');
+		const submitBtn = document.querySelector('button[type="submit"]');
+		
+		form.addEventListener('input', () => {
+			if (form.checkValidity()) {
+				submitBtn.disabled = false;
+			} else {
+				submitBtn.disabled = true;
+			}
+		});
+	</script>
+    
+</body>
+</html>

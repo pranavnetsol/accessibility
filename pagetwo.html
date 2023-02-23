@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table </title>
+	<style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+		th, td {
+			border: 1px solid black;
+			padding: 5px;
+		}
+		th {
+			background-color: lightgray;
+		}
+		td:first-child, th:first-child {
+			background-color: lightblue;
+		}
+		td:focus, button:focus {
+			outline: none;
+			background-color: yellow;
+		}
+		.modal {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1.1);
+        transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    }
+    .modal-content {
+         
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 1rem 1.5rem;
+        width: 24rem;
+        border-radius: 0.5rem;
+    }
+    .close-button {
+        float: right;
+        width: 1.5rem;
+        line-height: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        
+        background-color: lightgray;
+    }
+    .close-button:hover {
+        background-color: darkgray;
+    }
+    .show-modal {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1.0);
+        transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    }
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th></th>
+				<th>Column 1</th>
+				<th>Column 2</th>
+				<th>Column 3</th>
+				<th>Column 4</th>
+				<th>Column 5</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>Row 1</th>
+				<td tabindex="1">1-1</td>
+				<td tabindex="2">1-2</td>
+				<td tabindex="3">1-3</td>
+				<td tabindex="4">1-4</td>
+				<td tabindex="5">1-5</td>
+			</tr>
+			<tr>
+				<th>Row 2</th>
+				<td tabindex="6">2-1</td>
+				<td tabindex="7">2-2</td>
+				<td tabindex="8">2-3</td>
+				<td tabindex="9">2-4</td>
+				<td tabindex="10">2-5</td>
+			</tr>
+			<tr>
+				<th>Row 3</th>
+				<td tabindex="11">3-1</td>
+				<td tabindex="12">3-2</td>
+				<td tabindex="13">3-3</td>
+				<td tabindex="14">3-4</td>
+				<td tabindex="15">3-5</td>
+			</tr>
+			<tr>
+				<th>Row 4</th>
+				<td tabindex="11">4-1</td>
+				<td tabindex="12">4-2</td>
+				<td tabindex="13">4-3</td>
+				<td tabindex="14">4-4</td>
+				<td tabindex="15">4-5</td>
+			</tr>
+			<tr>
+				<th>Row 5</th>
+				<td tabindex="11">5-1</td>
+				<td tabindex="12">5-2</td>
+				<td tabindex="13">5-3</td>
+				<td tabindex="14">5-4</td>
+				<td tabindex="15">5-5</td>
+			</tr>
+			
+			<button class="trigger">Click here to trigger the modal!</button>
+			<div><a href="accordion.html"><button>Next Page</button></a></div>
+			
+			<div>
+				<a href="index.html"><button>Home</button></a>
+			  </div>
+
+			<div class="modal">
+		
+				<div class="modal-content">
+		
+				
+		
+					<span class="close-button">&times;</span>
+		
+					<h1>Hello, I am a modal!</h1>
+		
+				</div>
+		
+			</div>
+			</body>
+			<script>
+				const modal = document.querySelector(".modal");
+			  const trigger = document.querySelector(".trigger");
+			  const closeButton = document.querySelector(".close-button");
+		  
+			  function toggleModal() {
+				  modal.classList.toggle("show-modal");
+			  }
+		  
+			  function windowOnClick(event) {
+				  if (event.target === modal) {
+					  toggleModal();
+				  }
+			  }
+		  
+			  trigger.addEventListener("click", toggleModal);
+			  closeButton.addEventListener("click", toggleModal);
+			  window.addEventListener("click", windowOnClick);
+			  </script>
+</html>
+
+
+
+
+
+
+
+
+
